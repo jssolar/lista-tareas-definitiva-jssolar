@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function Lista() {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [list, setList] = useState([]);
 
   const handleChange = (event) => {
@@ -9,14 +9,14 @@ function Lista() {
   };
 
   const handleClick = () => {
-    if (text !== '') {
+    if (text !== "") {
       setList(list.concat(text));
-      setText('');
+      setText("");
     }
   };
 
   return (
-    <div className="App">
+    <div className="container">
       {list.length}
       <input
         onChange={handleChange}
@@ -25,11 +25,13 @@ function Lista() {
         value={text}
       />
       <button onClick={handleClick}>Agregar</button>
-      <ul>
-        {list.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <div className="container">
+        <ul>
+          {list.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
