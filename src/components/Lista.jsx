@@ -16,7 +16,7 @@ function Lista() {
   };
 
   return (
-    <div className="container">
+    <div className="container d-flex">
       {list.length}
       <input
         onChange={handleChange}
